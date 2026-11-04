@@ -1,0 +1,352 @@
+/* ===== CSS Variables (Theme) ===== */
+:root {
+  --primary: #0b1d3a;      /* dark blue */
+  --primary-light: #16305c;
+  --accent: #f5b301;       /* gold */
+  --accent-dark: #d99a00;
+  --background: #f3f5fa;
+  --surface: #ffffff;
+  --text: #1c2536;
+  --text-light: #ffffff;
+  --border: #d5dbe8;
+  --radius: 10px;
+  --shadow: 0 4px 12px rgba(11, 29, 58, 0.15);
+}
+
+/* ===== Reset & Base ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Segoe UI", Arial, sans-serif;
+  background-color: var(--background);
+  color: var(--text);
+  line-height: 1.6;
+  padding-top: 70px; /* space for fixed navbar */
+}
+
+section {
+  padding: 60px 8%;
+  scroll-margin-top: 70px;
+}
+
+section > h2 {
+  color: var(--primary);
+  font-size: 2rem;
+  margin-bottom: 20px;
+  padding-bottom: 8px;
+  border-bottom: 3px solid var(--accent);
+  display: inline-block;
+}
+
+h3 {
+  color: var(--primary);
+  margin-bottom: 10px;
+}
+
+/* ===== Navigation Bar ===== */
+#navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 70px;
+  background-color: var(--primary);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 8%;
+  box-shadow: var(--shadow);
+  z-index: 1000;
+}
+
+.logo {
+  color: var(--accent);
+  font-size: 1.4rem;
+}
+
+#navbar ul {
+  list-style: none;
+  display: flex;
+  gap: 25px;
+}
+
+#navbar a {
+  color: var(--text-light);
+  text-decoration: none;
+  font-weight: 500;
+  padding: 6px 4px;
+  border-bottom: 2px solid transparent;
+  transition: color 0.3s, border-color 0.3s;
+}
+
+#navbar a:hover {
+  color: var(--accent);
+  border-bottom-color: var(--accent);
+}
+
+/* ===== Hero Section ===== */
+#hero {
+  background: linear-gradient(135deg, var(--primary), var(--primary-light) 60%, #2a4b8a);
+  color: var(--text-light);
+  text-align: center;
+  padding: 110px 8%;
+}
+
+#hero h2 {
+  color: var(--text-light);
+  font-size: 2.8rem;
+  border: none;
+  display: block;
+  margin-bottom: 15px;
+}
+
+#hero p {
+  font-size: 1.2rem;
+  margin-bottom: 30px;
+}
+
+.hero-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.hero-buttons a:first-child button {
+  background-color: transparent;
+  color: var(--accent);
+  border: 2px solid var(--accent);
+}
+
+.hero-buttons a:first-child button:hover {
+  background-color: var(--accent);
+  color: var(--primary);
+}
+
+/* ===== Buttons ===== */
+button {
+  background-color: var(--accent);
+  color: var(--primary);
+  border: 2px solid var(--accent);
+  padding: 10px 24px;
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+button:hover {
+  background-color: var(--accent-dark);
+  border-color: var(--accent-dark);
+  transform: translateY(-2px);
+}
+
+/* ===== About Section ===== */
+.about-lists {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 25px;
+  margin-top: 25px;
+}
+
+.about-lists > div {
+  background-color: var(--surface);
+  padding: 25px;
+  border-radius: var(--radius);
+  border-left: 5px solid var(--accent);
+  box-shadow: var(--shadow);
+}
+
+.about-lists ul {
+  margin-left: 20px;
+}
+
+.about-lists li {
+  margin-bottom: 6px;
+}
+
+/* ===== Team Filter ===== */
+.filter {
+  margin-bottom: 20px;
+}
+
+.filter label {
+  font-weight: 600;
+  margin-right: 10px;
+}
+
+select,
+input {
+  padding: 10px;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  font-size: 1rem;
+  background-color: var(--surface);
+}
+
+select:focus,
+input:focus {
+  outline: none;
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px rgba(245, 179, 1, 0.3);
+}
+
+/* ===== Tables ===== */
+.table-wrapper {
+  overflow-x: auto;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: var(--surface);
+}
+
+th {
+  background-color: var(--primary);
+  color: var(--accent);
+  text-align: left;
+  padding: 14px;
+}
+
+td {
+  padding: 12px 14px;
+  border-bottom: 1px solid var(--border);
+}
+
+tbody tr:nth-child(even) {
+  background-color: #f8f9fd;
+}
+
+tbody tr:hover {
+  background-color: #fff6d9;
+}
+
+/* ===== Booking Form + Summary ===== */
+.booking-layout {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 30px;
+  align-items: start;
+}
+
+#bookingForm {
+  background-color: var(--surface);
+  padding: 30px;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  border: 1px solid var(--border);
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 18px;
+}
+
+.form-group label {
+  font-weight: 600;
+  margin-bottom: 6px;
+  color: var(--primary);
+}
+
+#summaryCard {
+  background-color: var(--primary);
+  color: var(--text-light);
+  padding: 25px;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  border-top: 5px solid var(--accent);
+  position: sticky;
+  top: 90px;
+}
+
+#summaryCard h3 {
+  color: var(--accent);
+  margin-bottom: 15px;
+}
+
+#summaryCard p {
+  margin-bottom: 8px;
+}
+
+#summaryCard hr {
+  border: none;
+  border-top: 1px solid var(--accent);
+  margin: 15px 0;
+}
+
+/* ===== Guidelines Cards ===== */
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 25px;
+}
+
+.card {
+  background-color: var(--surface);
+  padding: 25px;
+  border-radius: var(--radius);
+  border-top: 5px solid var(--accent);
+  box-shadow: var(--shadow);
+  transition: transform 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+/* ===== Footer ===== */
+footer {
+  background-color: var(--primary);
+  color: var(--text-light);
+  text-align: center;
+  padding: 20px;
+  border-top: 4px solid var(--accent);
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 800px) {
+  #navbar {
+    flex-direction: column;
+    height: auto;
+    padding: 10px 5%;
+  }
+
+  #navbar ul {
+    gap: 15px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  body {
+    padding-top: 110px;
+  }
+
+  section {
+    scroll-margin-top: 110px;
+  }
+
+  #hero h2 {
+    font-size: 2rem;
+  }
+
+  .booking-layout {
+    grid-template-columns: 1fr;
+  }
+
+  #summaryCard {
+    position: static;
+  }
+}
