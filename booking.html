@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Book Tickets - IPL 2026</title>
+  <link rel="stylesheet" href="CSS/style.css">
+</head>
+<body>
+
+  <!-- Navigation Bar (links back to index.html) -->
+  <header>
+    <nav id="navbar">
+      <h1 class="logo">IPL 2026 Tickets</h1>
+      <ul>
+        <li><a href="index.html#matches">Matches</a></li>
+        <li><a href="booking.html">Book Ticket</a></li>
+        <li><a href="index.html#my-bookings">My Bookings</a></li>
+        <li><a href="index.html#guidelines">Guidelines</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section id="booking" class="form-page">
+      <h2>Ticket Booking Form</h2>
+      <p class="form-note">Fields marked with * are required.</p>
+
+      <form id="bookingForm" action="#" method="post"
+      onsubmit="event.preventDefault(); alert('Booking submitted successfully!');">
+
+        <!-- Personal Details -->
+        <fieldset>
+          <legend>Personal Details</legend>
+
+          <div class="form-group">
+            <label for="name">Name *</label>
+            <input type="text" id="name" name="name"
+                   placeholder="Enter your full name"
+                   required minlength="3" maxlength="50"
+                   pattern="[A-Za-z ]+"
+                   title="Name should contain only letters and spaces (3 to 50 characters).">
+          </div>
+
+          <div class="form-group">
+            <label for="email">Email *</label>
+            <input type="email" id="email" name="email"
+                   placeholder="example@gmail.com"
+                   required maxlength="60">
+          </div>
+
+          <div class="form-group">
+            <label for="phone">Phone Number *</label>
+            <input type="tel" id="phone" name="phone"
+                   placeholder="10-digit mobile number"
+                   required minlength="10" maxlength="10"
+                   pattern="[6-9][0-9]{9}"
+                   title="Enter a valid 10-digit mobile number starting with 6, 7, 8 or 9.">
+          </div>
+        </fieldset>
+
+        <!-- Match Details -->
+        <fieldset>
+          <legend>Match Details</legend>
+
+          <div class="form-group">
+            <label for="match">Select Match *</label>
+            <select id="match" name="match" required>
+              <option value="">-- Select Match --</option>
+              <option value="1">Match 1: CSK vs MI</option>
+              <option value="2">Match 2: RCB vs KKR</option>
+              <option value="3">Match 3: SRH vs RR</option>
+              <option value="4">Match 4: MI vs RCB</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="stand">Stand Category *</label>
+            <select id="stand" name="stand" required>
+              <option value="">-- Select Stand --</option>
+              <option value="General">General</option>
+              <option value="Premium">Premium</option>
+              <option value="VIP">VIP</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="tickets">Number of Tickets * (1 to 10)</label>
+            <input type="number" id="tickets" name="tickets"
+                   placeholder="Enter number of tickets"
+                   required min="1" max="10">
+          </div>
+        </fieldset>
+
+        <!-- Additional Preferences -->
+        <fieldset>
+          <legend>Additional Booking Preferences</legend>
+
+          <p class="group-label">Ticket Delivery Method *</p>
+          <div class="option-row">
+            <label><input type="radio" name="delivery" value="email" required> E-Ticket on Email</label>
+                        <label><input type="radio" name="delivery" value="sms"> SMS</label>
+            <label><input type="radio" name="delivery" value="counter"> Collect at Counter</label>
+          </div>
+
+          <p class="group-label">Add-ons (optional)</p>
+          <div class="option-row">
+            <label><input type="checkbox" name="addons" value="parking"> Parking Pass</label>
+            <label><input type="checkbox" name="addons" value="jersey"> Team Jersey</label>
+            <label><input type="checkbox" name="addons" value="food"> Food Combo</label>
+          </div>
+
+          <div class="option-row">
+            <label><input type="checkbox" id="terms" name="terms" required>
+              I agree to the ticket terms and guidelines *</label>
+          </div>
+        </fieldset>
+
+        <!-- Buttons -->
+        <div class="form-buttons">
+          <button type="submit">Submit</button>
+          <button type="reset" class="reset-btn">Reset</button>
+        </div>
+
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2026 IPL Ticket Booking. All rights reserved.</p>
+  </footer>
+
+</body>
+</html>
