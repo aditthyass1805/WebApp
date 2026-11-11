@@ -409,3 +409,31 @@ footer {
      background-color: var(--primary);
      color: var(--accent);
    }
+
+      /* ===== Activity 4: Toast notification ===== */
+   .toast {
+     position: fixed;
+     bottom: 30px;
+     right: 30px;
+     background-color: var(--primary);
+     color: var(--text-light);
+     padding: 14px 22px;
+     border-left: 5px solid var(--accent);
+     border-radius: var(--radius);
+     box-shadow: var(--shadow);
+     font-weight: 500;
+     max-width: 320px;
+     opacity: 0;
+     transform: translateY(20px);
+     transition: opacity 0.4s, transform 0.4s;
+     z-index: 2000;
+   }
+
+   .toast.show {
+     opacity: 1;
+     transform: translateY(0);
+   }
+
+   .toast.error {
+     border-left-color: #d93025;
+   }
